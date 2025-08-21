@@ -1,11 +1,16 @@
 # snailCam
 Just optimizing my snailCam
 
-<!-- TODO: Add a picture of the rig here -->
+A shabby attempt of assembling an AI snail detection rig.
+![](./src/images/crude_rig.jpeg)
 
 ## Sensor Modes
 
-* Distance from object is approx. <!-- TODO: Measure distance -->
+* Distance from object is approx. is 31 cm
+- Distance from floor to upper rod: 33 cm
+- Camera protusion: 2 cm
+
+
  | Sensor Modes (px) | Approx Width (cm)|
  | --------------- | --------------- |
  | 1280x720  | RuntimeError: lores stream dims may not exceed main stream |  
