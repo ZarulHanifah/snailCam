@@ -997,8 +997,8 @@ class picTab(QWidget):
         self.af_mode = QComboBox()
         self.af_mode.addItems(["Manual", "Auto", "Continuous"])
         self.af_mode.currentIndexChanged.connect(self.set_af_mode)
-        self.af_trigger = QPushButton("Trigger Autofocus")
-        self.af_trigger.clicked.connect(self.trigger_af)
+        # self.af_trigger = QPushButton("Trigger Autofocus")
+        # self.af_trigger.clicked.connect(self.trigger_af)
         self.af_status = QLabel("")
         # --- Autofocus controls end here ---
 
@@ -1038,7 +1038,7 @@ class picTab(QWidget):
         self.layout.addRow("Preview Mode", self.preview_format)
         # --- Autofocus widgets in the layout ---
         self.layout.addRow("Autofocus Mode", self.af_mode)
-        self.layout.addRow(self.af_trigger)
+        # self.layout.addRow(self.af_trigger)
         self.layout.addRow(self.af_status)
         # --- End autofocus widgets ---
         if cv_present:
@@ -1163,12 +1163,12 @@ class picTab(QWidget):
         picam2.set_controls({"AfMode": mode})
         self.af_status.setText(f"AF Mode set to {self.af_mode.currentText()}")
 
-    def trigger_af(self):
-        if self.af_mode.currentIndex() != 0:
-            picam2.set_controls({"AfTrigger": 0})
-            self.af_status.setText("AF Triggered")
-        else:
-            self.af_status.setText("Switch to Auto or Continuous to trigger AF")
+    # def trigger_af(self):
+    #     if self.af_mode.currentIndex() != 0:
+    #         picam2.set_controls({"AfTrigger": 0})
+    #         self.af_status.setText("AF Triggered")
+    #     else:
+    #         self.af_status.setText("Switch to Auto or Continuous to trigger AF")
 
 
 def toggle_hidden_controls():
@@ -1201,8 +1201,8 @@ implemented_controls = [
 
 ignore_controls = {
     # It is not helpful to try to drive AF with simple slider controls, so ignore them.
-    "AfMode",
-    "AfTrigger",
+    # "AfMode",
+    # "AfTrigger",
     "AfSpeed",
     "AfRange",
     "AfWindows",
